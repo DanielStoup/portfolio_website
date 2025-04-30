@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Daniel Stoup's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+      .lightbox {
+        display: none;
+         position: fixed;
+         top: 0; left: 0;
+         width: 100%; height: 100%;
+         background: rgba(0, 0, 0, 0.8);
+         justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+
+.lightbox.show {
+  display: flex;
+}
+
+  
+      header {
+        background: #2c3e50;
+        color: white;
+        padding: 20px;
+        font-size: 28px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+  
+      nav {
+        background: #34495e;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px;
+      }
+  
+      nav a {
+        color: #ecf0f1;
+        margin: 8px 15px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+  
+      nav a:hover {
+        color: #1abc9c;
+      }
+  
+      main {
+        flex: 1;
+        padding: 40px 20px;
+        max-width: 1100px;
+        margin: auto;
+      }
+  
+      section {
+        display: none;
+        transition: opacity 0.4s ease;
+      }
+  
+      section.active-section {
+        display: block;
+      }
+  
+      h2 {
+        color: #2c3e50;
+        font-size: 26px;
+        margin-bottom: 20px;
+      }
+  
+      .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.gallery figure {
+  margin: 0;
+  width: 100%;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+  
+      .resume-preview {
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+  
+      .resume-preview:hover {
+        transform: scale(1.02);
+      }
+  
+      .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+  
+      .profile-container img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+  
+      .name-overlay {
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #34495e;
+      }
+  
+      .contact-link {
+        color: #2980b9;
+        text-decoration: none;
+      }
+  
+      .contact-link:hover {
+        text-decoration: underline;
+      }
+  
+      footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+      }
+  
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+        }
+  
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+    <script>
+      function showSection(sectionId) {
+        document.querySelectorAll('main section').forEach(section => {
+          section.classList.remove('active-section');
+        });
+  
+        const target = document.getElementById(sectionId);
+        if (target) {
+          target.classList.add('active-section');
+          localStorage.setItem('activeSection', sectionId);
+        }
+      }
+  
+      window.onload = () => {
+        const lastSection = localStorage.getItem('activeSection') || 'about';
+        showSection(lastSection);
+      };
+    </script>
+  </head>
+
+<body>
+  <header>Daniel Stoup</header>
+  <nav>
+    <a onclick="showSection('about')">About Me</a>
+    <a onclick="showSection('pictures')">My Work</a>
+    <a onclick="showSection('certifications')">Certifications</a>
+    <a onclick="showSection('Senior Project')">Senior Project</a>
+
+  </nav>
+  <main>
+    <section id="about" class="active-section">
+      <h2>About Me</h2>
+      <div class="profile-container">
+        <img src="headshot.jpg" alt="Daniel" loading="lazy" />
+        <div class="name-overlay">Daniel Stoup</div>
+      </div>
+    
+      <p>
+        I'm Daniel Stoup—though I often go by Dan or Danny in school and at work. I'm currently a senior in the IT program at Vinal Technical High School with a strong interest in hardware and hands-on technology. I've built systems, set up networks, and worked on electronics projects using Arduino. My experience includes both technical problem-solving and collaborative projects.
+      </p>
+    
+      <p>
+        I’m currently employed at Dairy Queen and plan to continue working through the summer while saving for trade school, where I hope to focus on either electrical or plumbing. My passion for learning through real-world challenges keeps me driven and focused on building a strong foundation for my future career.
+      </p>
+    
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:danielstoup@icloud.com" class="contact-link">danielstoup@icloud.com</a></p>
+      <p>Phone: <a href="tel:8604142580" class="contact-link">(860) 414-2580</a></p>
+    
+      <h3>My Cover Letter</h3>
+      <figure>
+        <a href="Cover Letter 4-2025.pdf" target="_blank" download>
+          <img src="Cover Letter 4-2025_pages-to-jpg-0001.jpg" alt="Cover Letter Preview" loading="lazy" class="resume-preview" />
+        </a>
+        <figcaption>Click to view full cover letter (PDF)</figcaption>
+      </figure>
+    
+      <h3>My Resume</h3>
+      <figure>
+        <a href="Resume 4-2025.pdf" target="_blank" download>
+          <img src="Resume 4-2025.jpg"Resume Preview" loading="lazy" class="resume-preview" />
+        </a>
+        <figcaption>Click to view full resume (PDF)</figcaption>
+      </figure>
+    
+      <h3>Follow-Up Letter</h3>
+      <figure>
+        <a href="follow up letter.pdf" target="_blank" download>
+          <img src="follow up.jpg" alt="Follow-Up Preview" loading="lazy" class="resume-preview" />
+        </a>
+        <figcaption>Click to view follow-up letter (PDF)</figcaption>
+      </figure>
+    </section>
+    
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:danielstoup@icloud.com" class="contact-link">danielstoup@icloud.com</a></p>
+    </section>
+    <section id="pictures">
+      <h2>Network and Infrastructure Services</h2>
+      <div class="gallery">
+        <figure><img src="Xbox X Apu.jpg" alt="Xbox X Apu" loading="lazy" /><figcaption>Xbox Series X Apu</figcaption><figcaption>Opening a Xbox to fix it overheating</figcaption></figure>
+        <figure><img src="Kali OS.jpg" alt="Kali OS" loading="lazy" /><figcaption>Kali Lunix OS</figcaption><figcaption>Learning and using Kali OS</figcaption></figure>
+        <figure><img src="Adding DNS on a server.jpg" alt="Example Image 3" loading="lazy" /><figcaption>DNS on a Window's server</figcaption><figcaption>Setting up DNS (Domain Name Server)</figcaption></figure>
+        <figure><img src="NAS Online.png" alt="ScreenShot of A working NAS" loading="lazy" /><figcaption>TrueNAS running</figcaption><figcaption>A Network Attached storage that I made junior year</figcaption></figure>
+        <figure><img src="Windows 8 VM.jpg" alt="Windows 8 homepage" loading="lazy" /><figcaption>Windows 8 home page</figcaption><figcaption>Screenshot of Windows 8 on a pc</figcaption></figure>
+        <figure><img src="Linux Lite VM.jpg" alt="Virtualiztion of Linux Lite" loading="lazy" /><figcaption>Linux Lite on a VM</figcaption><figcaption>Linux Lite running on a Windows Virtual Machines</figcaption></figure>
+        </div>      
+      
+      <h2>Computer Science</h2>
+      <div class="gallery">
+        <figure>
+          <a href="https://google.com" target="_blank">
+            <img src="Omnifoods.jpg" alt="Omnifoods photo link" loading="lazy" class="no-lightbox" /></a>
+          <figcaption>Front end development</figcaption><figcaption>Omnifoods website</figcaption>
+        </figure>
+        <figure><img src="Omnifoods back code.jpg" alt="OMnifoods code" loading="lazy" /><figcaption>Back end development</figcaption><figcaption>The code for the front end of Omnifoods </figcaption></figure>
+        <figure><img src="" alt="Access work office 365" loading="lazy" /><figcaption>Microsoft Office 365</figcaption><figcaption>
+          
+        </figcaption></figure>
+        </div>
+
+      <h2>Visual Technologies</h2>
+      <div class="gallery">
+        <figure><img src="Raster graphics editing.jpg" alt="Raster Graphics Editing" loading="lazy" /><figcaption>Raster Graphics Editing</figcaption></figure>
+        <figure><img src="Text on path- vector graphics.jpg" alt="Vector Graphics Editing" loading="lazy" /><figcaption>Vector Graphics Editing</figcaption></figure>
+        <figure><img src="Digital illustration.jpg" alt="Digital Illustration" loading="lazy" /><figcaption>Digital Illustration</figcaption></figure>
+        <figure><img src="blender donut.png" alt="3D Modeling/Rigging" loading="lazy" /><figcaption>3D Modeling of a donut</figcaption></figure>
+        </div>
+
+      <h2>Electronics Engineering and Fabrication</h2>
+      <div class="gallery">
+        <figure><img src="speaker finished.jpg" alt="Soldering" loading="lazy" /><figcaption>This is a bluetooth speaker that I made using parts from a set</figcaption></figure>
+      </div>
+
+      
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="gallery">
+        <figure><img src="PC Pro Cert.jpg" alt="PC Pro Certification" loading="lazy" /><figcaption>TestOut PC Pro Certification</figcaption></figure>
+        <figure><img src="MOS Excel Cert.png" alt="MOS Excel Certification" loading="lazy" /><figcaption>MOS Associate Excel Certification</figcaption></figure>
+        <figure><img src="Word Cert.jpg" alt="MOS Word Certification" loading="lazy" /><figcaption>MOS Word Certification</figcaption></figure>
+        <figure><img src="PowerPoint Cert.jpg" alt="MOS PowerPoint Certification" loading="lazy" /><figcaption>MOS PowerPoint Certification</figcaption></figure>
+        <figure><img src="Outlook 2019 Cert.jpg" alt="MOS Outlook Certification" loading="lazy" /><figcaption>MOS Outlook Certification</figcaption></figure>
+        <figure><img src="Office Specialist cert (2).jpg" alt="MOS Office Specialist Certification" loading="lazy" /><figcaption>MOS Office Specialist Certification</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:danielstoup@icloud.com" class="contact-link">danielstoup@icloud.com</a></p>
+    </section>
+
+    <section id="Senior Project">
+      <h2>Senior Project</h2>
+      <figure>
+        <img src="senior_project_photo.jpg" alt="Photo of Senior Project" loading="lazy" />
+        <figcaption>This is my senior project</figcaption>
+      </figure>
+    </section>
+    </main>
+
+  <footer>&ThinSpace;</footer>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Enlarged Image" />
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.gallery img:not(.no-lightbox)').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('show');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+      lightboxImg.src = '';
+    });
+  </script>
+</body>
+</html>
