@@ -32,7 +32,19 @@
   display: flex;
 }
 
-  
+.document-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.document-row figure {
+  max-width: 300px;
+  text-align: center;
+}
+
+
       header {
         background: #2c3e50;
         color: white;
@@ -162,6 +174,25 @@
         padding: 20px;
         font-size: 14px;
       }
+      .document-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.document-row figure {
+  max-width: 250px;  /* Reduced from 300px */
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .document-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
   
       @media (max-width: 768px) {
         nav {
@@ -218,33 +249,34 @@
         I’m currently employed at Dairy Queen and plan to continue working through the summer while saving for trade school, where I hope to focus on either electrical or plumbing. My passion for learning through real-world challenges keeps me driven and focused on building a strong foundation for my future career.
       </p>
     
-      <h3>Contact</h3>
+      <h3>Contact Me at:</h3>
       <p>Email: <a href="mailto:danielstoup@icloud.com" class="contact-link">danielstoup@icloud.com</a></p>
       <p>Phone: <a href="tel:8604142580" class="contact-link">(860) 414-2580</a></p>
     
-      <h3>My Cover Letter</h3>
-      <figure>
-        <a href="Cover Letter 4-2025.pdf" target="_blank" download>
-          <img src="Cover Letter 4-2025_pages-to-jpg-0001.jpg" alt="Cover Letter Preview" loading="lazy" class="resume-preview" />
-        </a>
-        <figcaption>Click to view full cover letter (PDF)</figcaption>
-      </figure>
-    
-      <h3>My Resume</h3>
-      <figure>
-        <a href="Resume 4-2025.pdf" target="_blank" download>
-          <img src="Resume 4-2025.jpg"Resume Preview" loading="lazy" class="resume-preview" />
-        </a>
-        <figcaption>Click to view full resume (PDF)</figcaption>
-      </figure>
-    
-      <h3>Follow-Up Letter</h3>
-      <figure>
-        <a href="follow up letter.pdf" target="_blank" download>
-          <img src="follow up.jpg" alt="Follow-Up Preview" loading="lazy" class="resume-preview" />
-        </a>
-        <figcaption>Click to view follow-up letter (PDF)</figcaption>
-      </figure>
+      <div class="document-row">
+        <figure>
+          <h3>My Cover Letter</h3>
+          <a href="Cover Letter 4-2025.pdf" target="_blank" download>
+            <img src="Cover Letter 4-2025_pages-to-jpg-0001.jpg" alt="Cover Letter Preview" loading="lazy" class="resume-preview" />
+          </a>
+        </figure>
+      
+        <figure>
+          <h3>My Resume</h3>
+          <a href="Resume 4-2025.pdf" target="_blank" download>
+            <img src="Resume 4-2025.jpg" alt="Resume Preview" loading="lazy" class="resume-preview" />
+          </a>
+          <figcaption>Click to download any as a PDF</figcaption>
+        </figure>
+      
+        <figure>
+          <h3>Follow-Up Letter</h3>
+          <a href="follow up letter.pdf" target="_blank" download>
+            <img src="follow up.jpg" alt="Follow-Up Preview" loading="lazy" class="resume-preview" />
+          </a>
+        </figure>
+      </div>
+      
     </section>
     
 
@@ -254,28 +286,49 @@
     </section>
     <section id="pictures">
       <h2>Network and Infrastructure Services</h2>
+      <h3>Physical</h3>
       <div class="gallery">
         <figure><img src="Xbox X Apu.jpg" alt="Xbox X Apu" loading="lazy" /><figcaption>Xbox Series X Apu</figcaption><figcaption>Opening a Xbox to fix it overheating</figcaption></figure>
-        <figure><img src="Kali OS.jpg" alt="Kali OS" loading="lazy" /><figcaption>Kali Lunix OS</figcaption><figcaption>Learning and using Kali OS</figcaption></figure>
+        <figure><img src="DS checking volts.jpg" alt="DS Checking Volts" loading="lazy" /><figcaption>The screen on a DS was not turning on and I was check if any of the resister were still working</figcaption></figure>
+        <figure><img src="Computer reformating.jpg" alt="Junior year 17 PC reformat" loading="lazy" /><figcaption>Junior Year I repaired and reformated 17 PCs</figcaption></figure>
+
+      </div>
+      
+      <h3>OS Managment</h3>
+      <div class="gallery">
+        <figure><img src="Kali OS.jpg" alt="Kali OS" loading="lazy" /><figcaption>Kali Lunix OS</figcaption></figure>
+        <figure><img src="Theory room set up.jpg" alt="photo of Theory room PCs" loading="lazy" /><figcaption>Junior year I installed and set up multiple PCs with Windows 11 or 10</figcaption></figure>
+        <figure><img src="Ubuntu.jpg" alt="Ubuntu" loading="lazy" /><figcaption>Ubuntu OS</figcaption></figure>
+        <figure><img src="Windows PE.jpg" alt="Windows PE" loading="lazy" /><figcaption>Learning what can be done in Windows PE sophmore uear</figcaption></figure>
+
+      </div>
+      
+      <h3>Server Administration</h3>
+      <div class="gallery">
         <figure><img src="Adding DNS on a server.jpg" alt="Example Image 3" loading="lazy" /><figcaption>DNS on a Window's server</figcaption><figcaption>Setting up DNS (Domain Name Server)</figcaption></figure>
-        <figure><img src="NAS Online.png" alt="ScreenShot of A working NAS" loading="lazy" /><figcaption>TrueNAS running</figcaption><figcaption>A Network Attached storage that I made junior year</figcaption></figure>
-        <figure><img src="Windows 8 VM.jpg" alt="Windows 8 homepage" loading="lazy" /><figcaption>Windows 8 home page</figcaption><figcaption>Screenshot of Windows 8 on a pc</figcaption></figure>
-        <figure><img src="Linux Lite VM.jpg" alt="Virtualiztion of Linux Lite" loading="lazy" /><figcaption>Linux Lite on a VM</figcaption><figcaption>Linux Lite running on a Windows Virtual Machines</figcaption></figure>
+        <figure><img src="IT server final.jpg" alt="Vinal's Switch rack" loading="lazy" /><figcaption>I was addinga switch for IT theory room and removing unused ethernet cables</figcaption></figure>
+      </div>  
+      
+      <h4>More Physical</h4>
+      <div class="gallery">
+        <figure><img src="NAS Online.png" alt="ScreenShot of A working NAS" loading="lazy" /><figcaption>TrueNAS running</figcaption></figure>
+        <figure><img src="Windows 8 VM.jpg" alt="Windows 8 homepage" loading="lazy" /><figcaption>Windows 8 </figcaption></figure>
+        <figure><img src="Mac OS.jpg" alt="Mac OS on a macbook" loading="lazy" /><figcaption>Downloaded a Mac OS onto a macbook air without another mac os</figcaption></figure>
+        <figure><img src="Linux Lite VM.jpg" alt="Virtualiztion of Linux Lite" loading="lazy" /><figcaption>Linux Lite on a VM</figcaption></figure>
         </div>      
       
       <h2>Computer Science</h2>
-      <div class="gallery">
-        <figure>
-          <a href="https://google.com" target="_blank">
-            <img src="Omnifoods.jpg" alt="Omnifoods photo link" loading="lazy" class="no-lightbox" /></a>
-          <figcaption>Front end development</figcaption><figcaption>Omnifoods website</figcaption>
-        </figure>
-        <figure><img src="Omnifoods back code.jpg" alt="OMnifoods code" loading="lazy" /><figcaption>Back end development</figcaption><figcaption>The code for the front end of Omnifoods </figcaption></figure>
-        <figure><img src="Microsoft 365.jpg" alt="Access work office 365 home page" loading="lazy" /><figcaption>Microsoft Office 365</figcaption><figcaption>
-          
-        </figcaption></figure>
-        </div>
+        <div class="gallery">
+          <figure>
+            <a href="https://google.com" target="_blank">
+              <img src="Omnifoods.jpg" alt="Omnifoods photo link" loading="lazy" class="no-lightbox" /></a>
+            <figcaption>Omnifoods website</figcaption>
+          </figure>
+          <figure><img src="Omnifoods back code.jpg" alt="OMnifoods code" loading="lazy" /><figcaption>This is code from the Junior year Omnifoods project</figcaption></figure>
+          <figure><img src="Microsoft 365.jpg" alt="Access work office 365 home page" loading="lazy" /><figcaption>Microsoft Office 365</figcaption><figcaption>
 
+        </div>
+            
       <h2>Visual Technologies</h2>
       <div class="gallery">
         <figure><img src="Raster graphics editing.jpg" alt="Raster Graphics Editing" loading="lazy" /><figcaption>Raster Graphics Editing</figcaption></figure>
@@ -296,11 +349,12 @@
       <h2>Certifications</h2>
       <div class="gallery">
         <figure><img src="PC Pro Cert.jpg" alt="PC Pro Certification" loading="lazy" /><figcaption>TestOut PC Pro Certification</figcaption></figure>
-        <figure><img src="MOS Excel Cert.png" alt="MOS Excel Certification" loading="lazy" /><figcaption>MOS Associate Excel Certification</figcaption></figure>
-        <figure><img src="Word Cert.jpg" alt="MOS Word Certification" loading="lazy" /><figcaption>MOS Word Certification</figcaption></figure>
-        <figure><img src="PowerPoint Cert.jpg" alt="MOS PowerPoint Certification" loading="lazy" /><figcaption>MOS PowerPoint Certification</figcaption></figure>
+        <figure><img src="MOS Excel Cert.png" alt="MOS Excel Certification" loading="lazy" /><figcaption>MOS Excel Associate Certification</figcaption></figure>
+        <figure><img src="Word Cert.jpg" alt="MOS Word Certification" loading="lazy" /><figcaption>MOS Word Associate Certification</figcaption></figure>
+        <figure><img src="PowerPoint Cert.jpg" alt="MOS PowerPoint Certification" loading="lazy" /><figcaption>MOS PowerPoint Associate Certification</figcaption></figure>
         <figure><img src="Outlook 2019 Cert.jpg" alt="MOS Outlook Certification" loading="lazy" /><figcaption>MOS Outlook Certification</figcaption></figure>
-        <figure><img src="Office Specialist cert (2).jpg" alt="MOS Office Specialist Certification" loading="lazy" /><figcaption>MOS Office Specialist Certification</figcaption></figure>
+        <figure><img src="Office Specialist cert (2).jpg" alt="MOS Associate 365 Certification" loading="lazy" /><figcaption>MOS 365 Apps Associate Certification</figcaption></figure>
+        <figure><img src="stop the bleed cert.jpg" alt="Stop The Bleed Certification" loading="lazy" /><figcaption>Stop The Bleed Certification</figcaption></figure>
       </div>
     </section>
 
@@ -313,10 +367,12 @@
     <section id="Senior Project">
       <h2>Senior Project</h2>
       <figure>
-        <figcaption>RC LIdar Car</figcaption>
-        <figcaption>I am currently working with Gabe to make a RC car that will use LIdar to drive by it self.</figcaption>
-
+        <h1>RC LIdar Car</h1>
+        <h3>My senior project is to build a working RC car that will be powered by a 7v and a 12v battery. It will power a 550rpm motor, that will be controled by an ardiuno.
+               Gabe is helping me on this project to make it a reality, with his knowledge of 3D modeling softwere and determination we have been able to get a physical thing.</h3>
+        <div class="gallery">
         <img src="RC Car motor Wiring.jpg" alt="Photo of Senior Project" loading="lazy" />
+        </div>
         <figcaption>This is the power wiring for the 12v battery that will power the motor.</figcaption>
       </figure>
     </section>
